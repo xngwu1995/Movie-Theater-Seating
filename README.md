@@ -12,24 +12,24 @@ This algorithm should maximize both customer satisfaction and customer safety.
 4. Customers who reserves the seat first are offered better seats(seats that are far from the screen and seats that are in the middle) than the customers who are reserve later.
 
 ## Algorithm
-total_available_seats: Count all available seats
-seats:
+total_available_seats: Count all available seats \
+seats: \
 [
-    ["e", "e", "e", ...],
-    ["e", "e", "e", ...],
-    ["e", "e", "e", ...],
+    [".", ".", ".", ...],
+    [".", ".", ".", ...],
+    [".", ".", ".", ...],
     ..,
     ..,
     ..
-]
+] \
 seats_record = {
-    0: [[10, 10], [10, 11]]
-}
-(key: "row", value: [["left available seats", left_start_idx], "right available seats", right_start_idx])
+    0: 20
+} \
+(key: "row", value: "available seats in this row") \
 
 ## Docker Image
-docker pull xngwu1995/movie-seating:latest
-docker container run -t -d --name movie-seating xngwu1995/movie-seating
-docker exec -it movie-seating bash
-cd app/movie_seats_code/
+docker pull xngwu1995/movie-seating:latest \n
+docker container run -t -d --name movie-seating xngwu1995/movie-seating \
+docker exec -it movie-seating bash \
+cd app/movie_seats_code/ \
 python3 movie_seats_assign.py
