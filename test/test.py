@@ -1,0 +1,1 @@
+from movie_seats_code.movie_seats_assign import MovieSeatsSystem

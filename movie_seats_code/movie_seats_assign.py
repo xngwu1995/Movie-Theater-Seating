@@ -1,17 +1,3 @@
-DIR = [
-    (0, 1), 
-    (0, 2), 
-    (0, 3), 
-    (1, 0), 
-    (2, 0), 
-    (3, 0), 
-    (-1, 0), 
-    (-2, 0),
-    (-3, 0),
-    (1, 0),
-    (2, 0),
-    (3, 0)
-    ]
 class MovieSeatsSystem:
     def __init__(self, rows, cols):
         self.seats = [["."] * cols for _ in range(rows)]
@@ -22,6 +8,20 @@ class MovieSeatsSystem:
         self.total_available_seats = rows * cols
         self.rows = rows
         self.cols = cols
+        self.DIR = [
+                (0, 1), 
+                (0, 2), 
+                (0, 3), 
+                (1, 0), 
+                (2, 0), 
+                (3, 0), 
+                (-1, 0), 
+                (-2, 0),
+                (-3, 0),
+                (1, 0),
+                (2, 0),
+                (3, 0)
+                ]
     
     def get_locations(self, members):
         if members > self.total_available_seats:
@@ -56,7 +56,7 @@ class MovieSeatsSystem:
         if locations == -1:
             return False
         for x, y in locations:
-            for dx, dy in DIR:
+            for dx, dy in self.DIR:
                 new_x, new_y = x + dx, y + dy
                 if not self.is_valid(new_x, new_y):
                     continue
