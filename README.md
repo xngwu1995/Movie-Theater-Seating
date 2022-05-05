@@ -26,3 +26,10 @@ seats_record = {
     0: [[10, 10], [10, 11]]
 }
 (key: "row", value: [["left available seats", left_start_idx], "right available seats", right_start_idx])
+
+## Docker Image
+docker pull xngwu1995/movie-seating:latest
+docker container run -t -d --name movie-seating xngwu1995/movie-seating
+docker exec -it movie-seating bash
+cd app/movie_seats_code/
+python3 movie_seats_assign.py
